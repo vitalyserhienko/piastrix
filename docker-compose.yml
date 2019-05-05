@@ -3,7 +3,7 @@ version: "3"
 services:
   web:
     build: .
-    command: uwsgi --ini app.ini
+    command: uwsgi --ini app.config.local.ini
     volumes:
       - .:/src
       - ./logs:/logs
