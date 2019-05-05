@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    command: uwsgi --ini app.ini
+    volumes:
+      - .:/src
+      - ./logs:/logs
+#    ports:
+#      - 5000:5000
+    env_file:
+      - .envs
+  nginx:
+    build: ./nginx
+    ports:
+      - 5000:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./web/static:/src/web/static

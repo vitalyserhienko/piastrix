@@ -1,0 +1,6 @@
+logs/
+*.log
+.envs
+test_data/
+__pycache__/
+.idea/

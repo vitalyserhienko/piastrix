@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="{{ method }}" action="{{ url }}" class="d-none">
+        <input name="lang" value="{{ lang }}" />
+        <input name="m_curorderid" value="{{ m_curorderid }}"/>
+        <input name="m_historyid" value="{{ m_historyid }}"/>
+        <input name="m_historytm" value="{{ m_historytm }}"/>
+        <input name="referer" value="{{ referer }}"/>
+        <input type="submit"/>
+    </form>
+{% endblock %}
+{% include 'other/spinner.html' %}
+{% block script %}
+<script>
+    window.onload = function() {
+        document.forms[0].submit();
+    }
+</script>
+{% endblock %}

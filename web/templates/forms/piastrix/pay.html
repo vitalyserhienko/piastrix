@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form name="Pay" method="post" action=" https://pay.piastrix.com/en/pay" accept-charset="UTF-8" class="d-none">
+        <input type="hidden" name="amount" value="{{ amount }}"/>
+        <input type="hidden" name="currency" value="{{ currency }}"/>
+        <input type="hidden" name="shop_id" value="{{ shop_id }}"/>
+        <input type="hidden" name="sign" value="{{ sign }}"/>
+        <input type="hidden" name="shop_order_id" value="{{ shop_order_id }}"/>
+        <input type="hidden" name="description" value="{{ description }}"/>
+        <input type="submit">
+    </form>
+{% endblock %}
+{% include 'other/spinner.html' %}
+{% block script %}
+<script>
+    window.onload = function() {
+        document.forms['Pay'].submit();
+    }
+</script>
+{% endblock %}
