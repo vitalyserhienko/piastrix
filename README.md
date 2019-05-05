@@ -9,4 +9,4 @@
     'SECRET_KEY'
     'SECRET_KEY_CSRF'
 ---
-   `shop_prder_id' randomly generates (hardcoded)`
+   `'shop_prder_id' randomly generates (hardcoded)`
